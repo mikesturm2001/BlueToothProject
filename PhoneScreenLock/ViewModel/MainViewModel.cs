@@ -6,6 +6,7 @@ using System;
 using InTheHand.Net.Bluetooth;
 using System.Windows;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace PhoneScreenLock.ViewModel
 {
@@ -31,13 +32,18 @@ namespace PhoneScreenLock.ViewModel
         public static extern void LockWorkStation();
 
         public LockCommand screenLock {get; set;}
-        public List<BluetoothDeviceInfo> blueToothDevices { get; private set; }
+        public RefreshBluetoothListCommand refreshList { get; set; }
+
+        public ObservableCollection<BluetoothDeviceInfo> blueToothDevices { get; private set; }
 
         public MainViewModel()
         {
             screenLock = new LockCommand(this);
+            refreshList = new RefreshBluetoothListCommand(this);
 
-            blueToothDevices = FindConnectedBluetoothDevices();
+            blueToothDevices = new ObservableCollection<BluetoothDeviceInfo>();
+
+            FindConnectedBluetoothDevices();
 
         }
 
@@ -47,17 +53,17 @@ namespace PhoneScreenLock.ViewModel
         }
 
         //http://stackoverflow.com/questions/9391746/how-can-i-data-bind-a-list-of-strings-to-a-listbox-in-wpf-wp7
-        public List<BluetoothDeviceInfo> FindConnectedBluetoothDevices()
+        public void FindConnectedBluetoothDevices()
         {
             BluetoothClient client = new BluetoothClient();
             BluetoothDeviceInfo[] devices = client.DiscoverDevicesInRange();
-            List<BluetoothDeviceInfo> items = new List<BluetoothDeviceInfo>();
+            ObservableCollection<BluetoothDeviceInfo> items = new ObservableCollection<BluetoothDeviceInfo>();
+            blueToothDevices.Clear();
             foreach (BluetoothDeviceInfo d in devices)
             {
-                items.Add(d);
+                blueToothDevices.Add(d);
             }
 
-            return items;
         }
 
        
