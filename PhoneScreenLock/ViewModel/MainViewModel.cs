@@ -7,6 +7,10 @@ using InTheHand.Net.Bluetooth;
 using System.Windows;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using InTheHand.Net;
+using System.Diagnostics;
+using PhoneScreenLock.BlueToothManager;
+using System.Threading;
 
 namespace PhoneScreenLock.ViewModel
 {
@@ -31,8 +35,11 @@ namespace PhoneScreenLock.ViewModel
         [DllImport("user32")]
         public static extern void LockWorkStation();
 
-        public LockCommand screenLock {get; set;}
+        public LockCommand screenLock { get; set; }
         public RefreshBluetoothListCommand refreshList { get; set; }
+        public ConnectCommand connectDevice { get; set; }
+
+        public int EndPointIndex { get; set; }
 
         public ObservableCollection<BluetoothDeviceInfo> blueToothDevices { get; private set; }
 
@@ -40,7 +47,7 @@ namespace PhoneScreenLock.ViewModel
         {
             screenLock = new LockCommand(this);
             refreshList = new RefreshBluetoothListCommand(this);
-
+            connectDevice = new ConnectCommand(this);
             blueToothDevices = new ObservableCollection<BluetoothDeviceInfo>();
 
             FindConnectedBluetoothDevices();
@@ -66,6 +73,25 @@ namespace PhoneScreenLock.ViewModel
 
         }
 
-       
+        public void connectToDevice()
+        {
+            BTManager manager = new BTManager();
+            manager.Port = 0xba5e;
+            manager.Name = "Base";
+
+            BluetoothDeviceInfo device = blueToothDevices[EndPointIndex];
+
+            Thread Base = new Thread(
+                o =>
+                {
+                    manager.HandleThread((BluetoothDeviceInfo)o);
+                });
+
+            Base.Start(device);
+
+            Base.Join();
+
+        }
+
     }
 }

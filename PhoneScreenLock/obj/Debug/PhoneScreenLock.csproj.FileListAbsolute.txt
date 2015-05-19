@@ -35,7 +35,6 @@ C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\GalaSoft.MvvmLight.E
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\GalaSoft.MvvmLight.Platform.dll
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\InTheHand.Net.Personal.dll
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\Microsoft.Practices.ServiceLocation.dll
-C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\System.Windows.Interactivity.dll
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\GalaSoft.MvvmLight.pdb
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\GalaSoft.MvvmLight.xml
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
@@ -45,16 +44,6 @@ C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\GalaSoft.MvvmLight.P
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\InTheHand.Net.Personal.xml
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\Microsoft.Practices.ServiceLocation.xml
-C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\de\System.Windows.Interactivity.resources.dll
-C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\en\System.Windows.Interactivity.resources.dll
-C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\es\System.Windows.Interactivity.resources.dll
-C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\it\System.Windows.Interactivity.resources.dll
-C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\ru\System.Windows.Interactivity.resources.dll
-C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-C:\BlueToothLock\BlueToothProject\PhoneScreenLock\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\obj\Debug\MainWindow.g.cs
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\obj\Debug\App.g.cs
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -67,3 +56,4 @@ C:\BlueToothLock\BlueToothProject\PhoneScreenLock\obj\Debug\PhoneScreenLock.Prop
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\obj\Debug\PhoneScreenLock.csproj.GenerateResource.Cache
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\obj\Debug\PhoneScreenLock.exe
 C:\BlueToothLock\BlueToothProject\PhoneScreenLock\obj\Debug\PhoneScreenLock.pdb
+C:\BlueToothLock\BlueToothProject\PhoneScreenLock\obj\Debug\PhoneScreenLock.csprojResolveAssemblyReference.cache

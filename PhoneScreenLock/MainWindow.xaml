@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PhoneScreenLock"
         mc:Ignorable="d"
         DataContext="{Binding MainWindow, Source={StaticResource Locator}}"
-        Title="MainWindow" Height="350" Width="525">
+        Title="BlueToothLock" Height="350" Width="525" Background="Gray">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
@@ -17,7 +17,8 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
-        <ListBox Grid.Row="0" Grid.ColumnSpan="2" Name="lbBluetoothList" HorizontalContentAlignment="Stretch" ItemsSource="{Binding blueToothDevices}">
+        <TextBlock FontSize="14px" Margin="10,0,0,0" Foreground="AntiqueWhite">Available Devices</TextBlock>
+        <ListBox Grid.Row="0" Grid.ColumnSpan="2" x:Name="lbBluetoothList" HorizontalContentAlignment="Stretch" Margin="10,20,10,10" ItemsSource="{Binding blueToothDevices}" SelectedIndex="{Binding EndpointIndex}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -29,10 +30,10 @@
         <Button Grid.Row="0" Grid.Column="2" VerticalAlignment="Top" Margin="0,10,10,0" HorizontalAlignment="Right" Height="25" Width="50" Command="{Binding refreshList}" >
             Sync
         </Button>
-        <Button Grid.Row="1" Height="25" Width="100" Command="{Binding screenLock}" >
+        <Button Grid.Row="1" Height="25" Width="100" Command="{Binding screenLock}" HorizontalAlignment="Right" Margin="0,0,10,0">
             Lock Screen
         </Button>
-        <Button Grid.Row="1" Grid.Column="1" Height="25" Width="100" >
+        <Button Grid.Row="1" Grid.Column="1" Height="25" Command="{Binding connectDevice}" CommandParameter="{Binding SelectedItem, ElementName=lbBlueToothList}" Width="100" HorizontalAlignment="Left" Margin="10,0,0,0" >
             Sync With Device
         </Button>
     </Grid>
